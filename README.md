@@ -15,9 +15,7 @@ Top Liu
 
 ## 安装
 1. 树莓派（如果只是仿真可忽略此步骤）  
-
-推荐安装Ubuntu mate 16.04 + Kinetic
-
+推荐安装Ubuntu mate 16.04 + Kinetic  
 编译安装serial_server 
 
 2. PC
