@@ -48,47 +48,29 @@ vi /ect/hosts
 例如  
 192.168.1.102 blackant-desktop  
 3. 配置PC的hosts  
-
-配置下hosts文件， 便于实现分布式通信
-
+配置下hosts文件， 便于实现分布式通信  
 vi /ect/hosts  
-
-添加下面一行 
-
-(树莓派的ip) （树莓派的主机名字） 
-
-例如
-
-192.168.1.101 Raspberry
-
+添加下面一行  
+(树莓派的ip) （树莓派的主机名字）  
+例如  
+192.168.1.101 Raspberry  
 
 ## 控制
 ### 启动树莓派中的串口server程序
 首先我们先给USB串口一个权限  
-
-sudo chmod 777 /dev/ttyUSB0 
-
+sudo chmod 777 /dev/ttyUSB0  
 roscore  
-
 最好是到目录下启动serial_server  
-
-cd ~/catkin_ws/devel/lib/serial_server
-
+cd ~/catkin_ws/devel/lib/serial_server  
 ./serial_server  
 
 ### PC
-1. 配置PC的ROS_MASTER_URI
-
-export ROS_MASTER_URI=http://（树莓派的主机名字）:11311
-
+1. 配置PC的ROS_MASTER_URI  
+export ROS_MASTER_URI=http://（树莓派的主机名字）:11311  
 2.运行rviz  
-
-roslaunch rover_rviz.launch 
-
-3. 控制Rover跑起来 
-
+roslaunch rover_rviz.launch  
+3. 控制Rover跑起来  
 rosrun nav_test control.py  
+上下左右键控制运动  
+空格 停车  
 
-上下左右键控制运动
-
-空格 停车
