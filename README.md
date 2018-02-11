@@ -1,13 +1,14 @@
 # Exbot ROS Rover  
 版本Kinetic
 
-Chazozheng Zhu
+by
+Chazozheng Zhu  
 Top Liu
 
-软件：ROS适用于四驱智能车
-车体：巨匠小路虎
-车载主控：树莓派Ubuntu mate 16.04 + Kinetic
-控制站PC： Ubuntu 16.04 + Kinetic
+软件：ROS适用于四驱智能车  
+车体：巨匠小路虎  
+车载主控：树莓派Ubuntu mate 16.04 + Kinetic  
+控制站PC： Ubuntu 16.04 + Kinetic  
 
 ![](http://leemanchina.com/robot/imagesserver/uploadpic/20171213172825122.jpg)
 ![](http://robohub.org/wp-content/uploads/2014/03/Screenshot-from-2014-03-14-07_34_30-1024x532.png)
