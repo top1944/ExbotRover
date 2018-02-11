@@ -19,60 +19,34 @@ Top Liu
 编译安装serial_server 
 
 2. PC
-
-运行安装脚本 
-
+运行安装脚本  
 install_exbot_ros_rover_kinetic.sh  
 
 ## 仿真
-1. rviz 
-
+1. rviz  
 roslaunch husky_gazebo spawn_husky.launch  
-
-roslaunch husky_viz view_model.launch 
-
+roslaunch husky_viz view_model.launch  
 2. gazebo  
-
 roslaunch husky_gazebo husky_empty_world.launch  
-
-roslaunch husky_gazebo husky_playpen.launch 
-
-第一次运行需要在线下载模型，需要等待几分钟方能正确显示
-
-
+roslaunch husky_gazebo husky_playpen.launch  
+第一次运行需要在线下载模型，需要等待几分钟方能正确显示  
 
 ## Rover配置 
-首先配置网络：
-
-1. PC 
-
-如果PC使用的是虚拟机，需要将Nat模式改为桥接模式（不要选择下面的复制IP）
-
-查看PC的ip
-
-ifconfig  
-  
-  
-2. 连接树莓派到本地的局域网
-
+首先配置网络  
+1. PC  
+如果PC使用的是虚拟机，需要将Nat模式改为桥接模式（不要选择下面的复制IP）  
+查看PC的ip  
+ifconfig     
+2. 连接树莓派到本地的局域网  
 将树莓派通过HDMI线连接到电脑屏幕， 通过鼠标选择当前的网络， 进行连接。  
-
-进入路由器找到当前的无线网中， 树莓派所属的IP地址 
-
+进入路由器找到当前的无线网中， 树莓派所属的IP地址  
 ifconfig   
-
-配置下hosts文件， 便于实现分布式通信 
-
-vi /ect/hosts 
-
-添加下面一行
-
-(ubuntu主机的ip) （Ubuntu主机的名字） 
-
+配置下hosts文件， 便于实现分布式通信  
+vi /ect/hosts  
+添加下面一行  
+(ubuntu主机的ip) （Ubuntu主机的名字）   
 例如  
-
 192.168.1.102 blackant-desktop  
-
 3. 配置PC的hosts  
 
 配置下hosts文件， 便于实现分布式通信
