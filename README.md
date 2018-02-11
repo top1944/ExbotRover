@@ -5,7 +5,7 @@ by
 Chaozheng Zhu  
 Top Liu  
 
-软件：ROS+适用于四驱智能车  
+软件：ROS+适用于四驱智能车  
 车体：巨匠小路虎  
 车载主控：树莓派Ubuntu mate 16.04 + Kinetic  
 控制站PC： Ubuntu 16.04 + Kinetic  
