@@ -1,0 +1,8 @@
+prefix=/home/black/catkin_ws/src/serial_server/build/devel
+
+Name: serial_server
+Description: Description of serial_server
+Version: 1.0.1
+Cflags: -I/home/black/catkin_ws/src/serial_server/include
+Libs: -L/home/black/catkin_ws/src/serial_server/build/devel/lib 
+Requires: nav_msgs roscpp rospy sensor_msgs std_msgs geometry_msgs

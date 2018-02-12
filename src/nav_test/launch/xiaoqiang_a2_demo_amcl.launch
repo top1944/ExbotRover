@@ -1,0 +1,21 @@
+<launch>
+
+  <param name="use_sim_time" value="false" />
+  <node pkg="tf" type="static_transform_publisher" name="laserlink_broadcaster" args="-0.25 0 0.3 3.1415926 0 0  base_link  laser 100"/>
+  <include file="$(find rplidar_ros)/launch/rplidar.launch" />
+  <include file="$(find laser_filters)/examples/shadow_filter_a2.launch"/>
+
+  <!-- EDIT THIS LINE TO REFLECT THE NAME OF YOUR OWN MAP FILE
+       Can also be overridden on the command line -->
+  <arg name="map" default="work0.yaml" />
+
+  <!-- Run the map server with the desired map -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find nav_test)/maps/$(arg map)"/>
+
+  <!-- Start move_base  -->
+  <include file="$(find nav_test)/launch/xiaoqiang_move_base.launch" />
+
+  <!-- Fire up AMCL -->
+  <include file="$(find nav_test)/launch/xiaoqiang_a2_amcl.launch" />
+
+</launch>

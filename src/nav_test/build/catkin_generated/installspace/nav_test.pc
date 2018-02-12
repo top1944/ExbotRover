@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: nav_test
+Description: Description of nav_test
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 
