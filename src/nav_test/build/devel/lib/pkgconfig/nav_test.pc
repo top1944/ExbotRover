@@ -1,0 +1,8 @@
+prefix=/home/odroid/catkin_ws/src/nav_test-master/build/devel
+
+Name: nav_test
+Description: Description of nav_test
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/odroid/catkin_ws/src/nav_test-master/build/devel/lib 
+Requires: 

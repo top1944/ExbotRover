@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/black/catkin_ws/src/serial_server/build/devel/setup.sh

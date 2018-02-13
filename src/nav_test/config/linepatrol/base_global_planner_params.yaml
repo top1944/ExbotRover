@@ -1,0 +1,5 @@
+linepatrolPlanner:
+    DumpFileName: AnnDump.sav
+    strTFParsFile: TFSettings.txt
+    TxtFileName: nav1.csv
+    ANN_Dump_Bool: false

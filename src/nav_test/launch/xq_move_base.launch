@@ -1,0 +1,13 @@
+<launch>
+
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="base_global_planner" value="linepatrol_planner/linepatrolPlanner"/>
+    <rosparam file="$(find nav_test)/config/linepatrol/costmap_common_params.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find nav_test)/config/linepatrol/costmap_common_params.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find nav_test)/config/linepatrol/local_costmap_params.yaml" command="load" />
+    <rosparam file="$(find nav_test)/config/linepatrol/global_costmap_params.yaml" command="load" />
+    <rosparam file="$(find nav_test)/config/linepatrol/base_local_planner_params.yaml" command="load" />
+    <rosparam file="$(find nav_test)/config/linepatrol/base_global_planner_params.yaml" command="load" />
+  </node>
+
+</launch>

@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC   -shared -Wl,-soname,libgtest_main.so -o libgtest_main.so CMakeFiles/gtest_main.dir/src/gtest_main.cc.o  -L/home/black/catkin_ws/src/serial_server/build/gtest/src -lpthread libgtest.so -lpthread -Wl,-rpath,/home/black/catkin_ws/src/serial_server/build/gtest/src:/home/black/catkin_ws/src/serial_server/build/gtest 

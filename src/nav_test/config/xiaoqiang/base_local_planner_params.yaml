@@ -1,0 +1,37 @@
+controller_frequency: 10.0
+recovery_behavior_enabled: false
+clearing_rotation_allowed: false
+
+DWAPlannerROS:
+  acc_lim_x: 0.8
+  acc_lim_y: 0.0
+  acc_lim_th: 8
+  max_trans_vel: 0.4
+  min_trans_vel: 0.0
+  max_vel_x: 0.4
+  min_vel_x: 0.0
+  max_vel_y: 0
+  min_vel_y: 0
+  max_rot_vel: 0.5
+  min_rot_vel: -0.5
+
+  yaw_goal_tolerance: 0.1
+  xy_goal_tolerance: 0.15
+  latch_xy_goal_tolerance: true
+  sim_time: 2.0
+  sim_granularity: 0.05
+  vx_samples: 20
+  vy_samples: 1
+  vtheta_samples: 10
+  controller_frequency: 10
+  penalize_negative_x: false
+
+  path_distance_bias: 32.0
+  goal_distance_bias: 100.0
+  occdist_scale: 0.01
+  forward_point_distance: 0.3
+  stop_time_buffer: 0.2
+  scaling_speed: 0.25
+  max_scaling_factor: 0.2
+  oscillation_reset_dist: 0.20
+  prune_plan: true
