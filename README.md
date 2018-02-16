@@ -59,7 +59,7 @@ vi /ect/hosts
 ### 启动树莓派中的串口server程序
 首先我们先给USB串口一个权限  
 sudo chmod 777 /dev/ttyUSB0  
-roscore  
+roscore & 
 最好是到目录下启动serial_server  
 cd ~/catkin_ws/devel/lib/serial_server  
 ./serial_server  
