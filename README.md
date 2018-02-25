@@ -19,29 +19,44 @@ Top Liu
 编译安装serial_server 
 
 2. PC
-运行安装脚本  
+运行安装脚本 
+ 
 install_exbot_ros_rover_kinetic.sh  
 
-## 仅在rviz观察  
+## 仅在rviz观察
+  
 roslaunch husky_gazebo spawn_husky.launch  
 roslaunch husky_viz view_model.launch  
 
 ## gazebo 仿真  
+
+空地图，仅有无人车
+
 roslaunch husky_gazebo husky_empty_world.launch  
 第一次运行需要在线下载模型，需要等待几分钟方能正确显示  
-运行rviz    
-    roslaunch husky_viz view_model.launch  
+运行rviz 
+   
+    roslaunch husky_viz view_model.launch
+	
 将左侧的FixedFrameodem从默认的base_link改为	
-运行键盘控制  
-    rosrun teleop_twist_keyboard teleop_twist_keyboard.py  
+运行键盘控制
+  
+    rosrun teleop_twist_keyboard teleop_twist_keyboard.py
+	
 如果没有安装键盘控制包，则运行  
-	sudo apt-get install ros-kinetic-teleop-twist-keyboard  
 
+	sudo apt-get install ros-kinetic-teleop-twist-keyboard  
 	
 ![Image text](pic/flow-1.png)
-	
-	
 
+加载指定地图
+	
+roslaunch husky_gazebo husky_empty_world.launch world_name:=worlds/willowgarage.world	
+
+
+
+	
+# 运行实体机器人	
 ## Rover配置 
 首先配置网络  
 1. PC  
