@@ -22,14 +22,25 @@ Top Liu
 运行安装脚本  
 install_exbot_ros_rover_kinetic.sh  
 
-## 仿真
-1. rviz  
+## 仅在rviz观察  
 roslaunch husky_gazebo spawn_husky.launch  
 roslaunch husky_viz view_model.launch  
-2. gazebo  
+
+## gazebo 仿真  
 roslaunch husky_gazebo husky_empty_world.launch  
-roslaunch husky_gazebo husky_playpen.launch  
 第一次运行需要在线下载模型，需要等待几分钟方能正确显示  
+运行rviz    
+    roslaunch husky_viz view_model.launch  
+将左侧的FixedFrameodem从默认的base_link改为	
+运行键盘控制  
+    rosrun teleop_twist_keyboard teleop_twist_keyboard.py  
+如果没有安装键盘控制包，则运行  
+	sudo apt-get install ros-kinetic-teleop-twist-keyboard  
+
+	
+![Image text](pic/flow-1.png)
+	
+	
 
 ## Rover配置 
 首先配置网络  
