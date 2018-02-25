@@ -1,59 +1,35 @@
-# Exbot ROS Rover  
+# 导航教程 
 版本Kinetic
 
-by  
-Chaozheng Zhu  
+by   
 Top Liu  
 
-软件：ROS+适用于四驱智能车  
+软件：ROS+四驱智能车  
 车体：巨匠小路虎  
 车载主控：树莓派Ubuntu mate 16.04 + Kinetic  
 控制站PC： Ubuntu 16.04 + Kinetic  
-
-![](http://library.isr.ist.utl.pt/docs/roswiki/attachments/Robots(2f)Husky/husky-a200-unmanned-ground-vehicle-render.jpg)
-![](http://robohub.org/wp-content/uploads/2014/03/Screenshot-from-2014-03-14-07_34_30-1024x532.png)
-
-## 安装
-1. 树莓派（如果只是仿真可忽略此步骤）  
-推荐安装Ubuntu mate 16.04 + Kinetic  
-编译安装serial_server 
-
-2. PC
-运行安装脚本 
  
-install_exbot_ros_rover_kinetic.sh  
 
-## 仅在rviz观察
-  
-    roslaunch husky_gazebo spawn_husky.launch  
-    roslaunch husky_viz view_model.launch  
+## frontier_exploration
+	
+	Source: git https://github.com/paulbovbel/frontier_exploration.git (branch: kinetic-devel)   	
 
-## gazebo 仿真  
+ http://wiki.ros.org/frontier_exploration
+ 
+	sudo apt-get install ros-kinetic-frontier-exploration ros-kinetic-navigation-stage
+	
+Run the necessary nodes one-by-one from separate terminal:
 
-空地图，仅有无人车
+	roslaunch navigation_stage move_base_gmapping_5cm.launch
 
-    roslaunch husky_gazebo husky_empty_world.launch  
-	
-第一次运行需要在线下载模型，需要等待几分钟方能正确显示  
-运行rviz 
-   
-    roslaunch husky_viz view_model.launch
-	
-将左侧的FixedFrameodem从默认的base_link改为	
-运行键盘控制
-  
-    rosrun teleop_twist_keyboard teleop_twist_keyboard.py
-	
-如果没有安装键盘控制包，则运行  
+	roslaunch navigation_stage move_base.xml
 
-	sudo apt-get install ros-kinetic-teleop-twist-keyboard  
+	roslaunch frontier_exploration global_map.launch
 	
-![Image text](pic/flow1.png)
 
-加载指定地图
-	
-    roslaunch husky_gazebo husky_empty_world.launch world_name:=worlds/willowgarage.world	
-	
+
+
+ 
 ![Image text](pic/gazebo_wg1.png)
 	
     roslaunch husky_navigation amcl_demo.launch	
