@@ -25,14 +25,15 @@ install_exbot_ros_rover_kinetic.sh
 
 ## 仅在rviz观察
   
-roslaunch husky_gazebo spawn_husky.launch  
-roslaunch husky_viz view_model.launch  
+    roslaunch husky_gazebo spawn_husky.launch  
+    roslaunch husky_viz view_model.launch  
 
 ## gazebo 仿真  
 
 空地图，仅有无人车
 
-roslaunch husky_gazebo husky_empty_world.launch  
+    roslaunch husky_gazebo husky_empty_world.launch  
+	
 第一次运行需要在线下载模型，需要等待几分钟方能正确显示  
 运行rviz 
    
@@ -51,9 +52,21 @@ roslaunch husky_gazebo husky_empty_world.launch
 
 加载指定地图
 	
-roslaunch husky_gazebo husky_empty_world.launch world_name:=worlds/willowgarage.world	
+    roslaunch husky_gazebo husky_empty_world.launch world_name:=worlds/willowgarage.world	
+	
+![Image text](pic/gazebo_wg1.png)
+	
+    roslaunch husky_navigation amcl_demo.launch	
+    roslaunch husky_viz view_robot.launch
 
+![Image text](pic/ACML_rviz.png)
+ 
+![Image text](pic/gazebo_wg1.png)	
+	
+	
+### gmapping demo
 
+    roslaunch husky_navigation gmapping_demo.launch
 
 	
 # 运行实体机器人	
