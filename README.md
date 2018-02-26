@@ -81,6 +81,9 @@ install_exbot_ros_rover_kinetic.sh
 
 探索
 	
+	
+    roslaunch husky_gazebo husky_empty_world.launch world_name:=clearpath_playpen.world
+	roslaunch husky_viz view_robot.launch
 	roslaunch husky_navigation exploration_demo.launch
 	
 	
