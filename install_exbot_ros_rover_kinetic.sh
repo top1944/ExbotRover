@@ -20,7 +20,8 @@ echo -e "\e[34m >>> ...done\e[39m"
 
 echo -e "\e[34m >>> Beginning ros-kinetic-desktop-full installation...\e[39m"
 
-  sudo apt-get --yes  install ros-kinetic-desktop-full 
+  sudo apt-get --yes  install ros-kinetic-desktop-full
+  
 
 echo -e "\e[34m >>> Setting up rosdep\e[39m"
 
@@ -36,9 +37,7 @@ echo -e "\e[34m >>> Setting up rosinstall \e[39m"
 
   sudo apt-get --yes --force-yes install python-rosinstall
 
-echo -e "\e[1m \e[34m >>> Installing dependencies for mobile robotics code \e[21m \e[39m"
 
-sudo apt-get --yes --force-yes  sudo apt-get install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control ros-kinetic-multimaster-launch  ros-kinetic-lms1xx
   
 echo -e "\e[1m \e[34m >>> Installing support software \e[21m \e[39m"
 
@@ -53,16 +52,24 @@ echo -e "\e[1m \e[34m >>> Installing support software \e[21m \e[39m"
   sudo apt-get --yes --force-yes install gitk git-gui
   sudo apt-get --yes --force-yes install kazam vlc
   
-  source ~/.bashrc
-
   
- echo "Setting up workspace."
+ #### Installing dependencies ############################################################################################ 
+echo -e "\e[1m \e[34m >>> Installing dependencies for mobile robotics code \e[21m \e[39m"
 
-USERNAME=$1
-EMAIL=$2
+sudo apt-get --yes --force-yes install ros-kinetic-gazebo-ros-pkgs ros-kinetic-gazebo-ros-control 
+sudo apt-get --yes --force-yes install ros-kinetic-multimaster-launch 
+# Next you will need to install the Kinetic packages for the simulated LIDAR.
+sudo apt-get --yes --force-yes install ros-kinetic-lms1xx
+# Also I installed the below somehow but they might not be needed actually.
+sudo apt-get --yes --force-yes install hector-gazebo
+sudo apt-get --yes --force-yes install ros-kinetic-interactive-marker-twist-server 
+sudo apt-get --yes --force-yes install ros-kinetic-twist-mux
+sudo apt-get --yes --force-yes install ros-kinetic-imu-tools 
+  source ~/.bashrc
+  
+ #### Setting up workspace ######################################################################################################## 
+ echo "##### Setting up workspace. ####################################"
 
-#if [ "$USERNAME" != "" ] || [ "$EMAIL" != "" ];
-#then
   source /opt/ros/kinetic/setup.bash
   echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
   rosdep update
@@ -70,11 +77,9 @@ EMAIL=$2
   mkdir -p ~/catkin_ws/src
 	
   cd ~/catkin_ws/src  && catkin_init_workspace
-  cd ~/catkin_ws && catkin_make
-
   
   
-  #### git 
+  #### git #############################################################################################################
   git config --global user.name "$USERNAME"
   git config --global user.email "$EMAIL"
  
@@ -82,8 +87,7 @@ EMAIL=$2
   cd ~/catkin_ws/src && git clone https://github.com/BlueWhaleRobot/nav_test.git
   
 
-  
-
+#### make #######################################################
   echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
   source ~/.bashrc
   cd ~/catkin_ws && rosdep install --from-path src --ignore-src 
@@ -101,10 +105,7 @@ EMAIL=$2
   # echo "ROS_IP=`ifconfig eth0 2>/dev/null|awk '/inet addr:/ {print $2}'|sed 's/addr://'`"
 
 
-#else
-  #echo "USAGE: ./setup_workspace_your_github_username your_email@email.com"
 
-#fi
 
 echo "[!!!] NB: You must still manually add your ROS_IP to your ~/.bashrc.  Do this by checking your IP with hostname -I or ifconfig and then adding export ROS_IP='x.x.x.x' to your ~/.bashrc." 
   
