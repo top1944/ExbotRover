@@ -72,7 +72,7 @@ sudo apt-get --yes --force-yes install ros-kinetic-imu-tools
 
   source /opt/ros/kinetic/setup.bash
   echo "source /opt/ros/kinetic/setup.bash" >> ~/.bashrc
-  rosdep update
+ 
 
   mkdir -p ~/catkin_ws/src
 	
